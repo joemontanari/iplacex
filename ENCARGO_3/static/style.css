@@ -81,7 +81,7 @@ h1 {
 }
 
 .resultado h2 {
-    color: #333;
+    color: #333333;
     margin-bottom: 15px;
 }
 
@@ -92,7 +92,7 @@ h1 {
 }
 
 .resultado p strong {
-    color: #333;
+    color: #000000;
 }
 
 /* Adicional: Estado Aprobado en VERDE */
