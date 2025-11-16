@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar Caracteres - Ejercicio 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Contar Caracteres</h1>
+        
+        <form method="POST" action="{{ url_for('cantidad_caracteres') }}">
+            <div class="form-group">
+                <label for="nombre_1">Nombre 1:</label>
+                <input type="text" id="nombre_1" name="nombre_1" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre_2">Nombre 2:</label>
+                <input type="text" id="nombre_2" name="nombre_2" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre_3">Nombre 3:</label>
+                <input type="text" id="nombre_3" name="nombre_3" required>
+            </div>
+            
+            <button type="submit" class="boton">Enviar</button>
+        </form>
+        
+        {% if nombre_mayor and cantidad %}
+        <div class="resultado">
+            <p>El nombre con mayor cantidad de caracteres es: </strong>{{ nombre_mayor }}</strong>.</p>
+            <p>El nombre tiene <strong>{{ cantidad }}</strong> caracteres</p>
+        </div>
+        {% endif %}
+        
+        <a href="{{ url_for('index') }}" class="boton-volver">Volver al inicio</a>
+    </div>
+</body>
+</html>
