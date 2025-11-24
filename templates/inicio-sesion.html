@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="contenedor-formulario">
+        <h1 class="titulo-formulario">Inicio de Sesión</h1>
+        
+        <form method="POST" class="formulario">
+            <div class="grupo-campo">
+                <label for="nombre">Usuario:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            
+            <div class="grupo-campo">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <button type="submit" class="boton boton-azul">Iniciar Sesión</button>
+        </form>
+        
+        {% if resultado %}
+            {% if exito %}
+            <div class="resultado resultado-exito">
+                <h2>¡Bienvenido {{rol}} {{ nombre }}!</h2>
+                <p>Has iniciado sesión correctamente.</p>
+            </div>
+            {% else %}
+            <div class="resultado resultado-error">
+                <h2>Error</h2>
+                <p>Usuario o contraseña incorrectos.<br>Por favor, intenta nuevamente.</p>
+            </div>
+            {% endif %}
+        {% endif %}
+        
+        <a href="{{ url_for('index') }}" class="boton boton-gris">Volver al inicio</a>
+    </div>
+</body>
+</html>

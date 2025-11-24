@@ -1,0 +1,248 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Página principal */
+.contenedor-principal {
+    background: white;
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.titulo-principal {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.subtitulo {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.botones-index-container {
+    display: flex;
+    flex-direction: row; /* Botones en fila horizontal */
+    gap: 30px; /* Espacio entre botones */
+    justify-content: center;
+    align-items: center;
+}
+.botones-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+/* Estilos de botones */
+.boton-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px; /* Ancho fijo */
+    height: 200px; /* Alto fijo para hacerlo cuadrado */
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px; /* Bordes menos redondeados */
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Estilos de botones */
+.boton {
+    display: block;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.boton-morado {
+    background-color: #c026d3;
+    color: white;
+}
+
+.boton-morado:hover {
+    background-color: #a21caf;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(192, 38, 211, 0.4);
+}
+
+.boton-verde {
+    background-color: #84cc16;
+    color: white;
+}
+
+.boton-verde:hover {
+    background-color: #65a30d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(132, 204, 22, 0.4);
+}
+
+.boton-azul {
+    background-color: #0066ff;
+    color: white;
+    width: 100%;
+}
+
+.boton-azul:hover {
+    background-color: #0052cc;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
+}
+
+.boton-gris {
+    background-color: #6b7280;
+    color: white;
+    margin-top: 20px;
+}
+
+.boton-gris:hover {
+    background-color: #4b5563;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(107, 114, 128, 0.4);
+}
+
+/* Formularios */
+.contenedor-formulario {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+}
+
+.titulo-formulario {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.formulario {
+    margin-bottom: 20px;
+}
+
+.grupo-campo {
+    margin-bottom: 25px;
+}
+
+.grupo-campo label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.grupo-campo input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.grupo-campo input:focus {
+    outline: none;
+    border-color: #0066ff;
+}
+
+/* Resultados */
+.resultado {
+    background-color: #f0f9ff;
+    border: 3px solid #0066ff;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.resultado h2 {
+    color: #0066ff;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.resultado p {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.resultado .total-final {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0066ff;
+    margin-top: 20px;
+}
+
+.resultado-exito {
+    background-color: #dbeafe;
+    border-color: #3b82f6;
+}
+
+.resultado-exito h2 {
+    color: #1e40af;
+}
+
+.resultado-error {
+    background-color: #fee2e2;
+    border-color: #ef4444;
+}
+
+.resultado-error h2 {
+    color: #991b1b;
+}
+
+.resultado-error p {
+    color: #991b1b;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .contenedor-principal,
+    .contenedor-formulario {
+        padding: 30px 20px;
+    }
+    
+    .titulo-principal {
+        font-size: 32px;
+    }
+    
+    .titulo-formulario {
+        font-size: 28px;
+    }
+    
+    .boton {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+}

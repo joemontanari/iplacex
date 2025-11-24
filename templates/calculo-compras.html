@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Compras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="contenedor-formulario">
+        <h1 class="titulo-formulario">Cálculo de Compras</h1>
+        
+        <form method="POST" class="formulario">
+            <div class="grupo-campo">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            
+            <div class="grupo-campo">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" min="1" max="120" required>
+            </div>
+            
+            <div class="grupo-campo">
+                <label for="tarros">Cantidad de tarros de pintura:</label>
+                <input type="number" id="tarros" name="tarros" min="1" required>
+            </div>
+            
+            <button type="submit" class="boton boton-azul">Calcular</button>
+        </form>
+        
+        {% if resultado %}
+        <div class="resultado">
+            <h2>Resultado para {{ nombre }}</h2>
+            <p><strong>Total sin descuento:</strong> ${{ "{:,.0f}".format(total_sin_descuento) }}</p>
+            <p><strong>El descuento es:</strong> ${{ "{:,.0f}".format(descuento) }}</p>
+            <p class="total-final"><strong>El total a pagar es de:</strong> ${{ "{:,.0f}".format(total_con_descuento) }}</p>
+        </div>
+        {% endif %}
+        
+        <a href="{{ url_for('index') }}" class="boton boton-gris">Volver al inicio</a>
+    </div>
+</body>
+</html>
